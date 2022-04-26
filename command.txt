@@ -1,0 +1,19 @@
+===== Planet-CLi ======
+-----------------------
+- pscale auth login
+- pscale database create <db-name>
+- pscale database list
+- pscale brance list <db-name>
+- pscale shell <db-name>
+- pscale connect <db-name> <branch>
+- pscale branch create <DATABASE_NAME> <BRANCH_NAME>
+- pscale branch promote <DATABASE_NAME> <BRANCH_NAME>
+- pscale deploy-request create <DATABASE_NAME> <BRANCH_NAME>
+- pscale deploy-request deploy <DATABASE_NAME> <DEPLOY_REQUEST_NUMBER>
+- pscale branch delete <DATABASE_NAME> <BRANCH_NAME>
+
+===== Prisma ==========
+-----------------------
+- npx prisma db push --> use insted prisma migrate dev (in planetScale)
+- npx prisma db seed
+- npx prisma studio

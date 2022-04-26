@@ -1,0 +1,33 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model People {
+  id   Int    @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name String
+  bio  String @db.Text
+  age  Int
+  sex  String
+  pets Pet[]
+}
+
+model Pet {
+  id      Int    @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name    String
+  breed   String
+  age     Int
+  weight  Int
+  owner   People @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  ownerId Int
+
+  @@index([ownerId])
+}
